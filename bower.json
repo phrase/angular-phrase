@@ -26,6 +26,7 @@
   ],
   "devDependencies": {
     "angular": "~1.2.12",
+    "angular-translate": "~2.0.0",
     "angular-mocks": "~1.2.12"
   }
 }

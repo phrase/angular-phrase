@@ -1,16 +1,16 @@
 phrase = angular.module "phrase", ['pascalprecht.translate', 'ng']
 
-phrase.value "phrase.authToken", ""
-phrase.value "phrase.enabled", true
-phrase.value "phrase.decoratorPrefix", "{{__"
-phrase.value "phrase.decoratorSuffix", "__}}"
+phrase.value "phraseAuthToken", ""
+phrase.value "phraseEnabled", true
+phrase.value "phraseDecoratorPrefix", "{{__"
+phrase.value "phraseDecoratorSuffix", "__}}"
 
 phrase.config ["$provide", ($provide) ->
-  $provide.decorator "$translate", ["$delegate", "phrase.enabled", "phrase.decoratorPrefix", "phrase.decoratorSuffix", ($translate, enabled, decoratorPrefix, decoratorSuffix) ->
-    if enabled
+  $provide.decorator "$translate", ["$delegate", "phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix", ($translate, phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) ->
+    if phraseEnabled
       $translate._instant = $translate.instant
       $translate.instant = (translationId, interpolateParams, interpolationId) ->
-        "#{decoratorPrefix}phrase_#{translationId}#{decoratorSuffix}"
+        "#{phraseDecoratorPrefix}phrase_#{translationId}#{phraseDecoratorSuffix}"
 
     $translate
   ]
