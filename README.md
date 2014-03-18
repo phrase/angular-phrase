@@ -1,5 +1,7 @@
 # angular-phrase
 
+[![Build Status](https://travis-ci.org/phrase/angular-phrase.png)](https://travis-ci.org/phrase/angular-phrase)
+
 angular-phrase is an addon for [angular-translate](https://github.com/angular-translate/angular-translate) that lets you connect localized AngularJS applications to the PhraseApp In-Context editor.
 
 ## Prerequisites
