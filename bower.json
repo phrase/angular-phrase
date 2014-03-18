@@ -1,0 +1,31 @@
+{
+  "name": "angular-phrase",
+  "version": "0.0.0",
+  "authors": [
+    "PhraseApp <support@phraseapp.com>"
+  ],
+  "description": "Use angular-translate with the powerful PhraseApp In-Context-Editor for easy translation management in AngularJS applications",
+  "keywords": [
+    "angular",
+    "translate",
+    "i18n",
+    "l10n",
+    "localization",
+    "internationalization",
+    "phraseapp",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/phrase/angular-phrase",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.12",
+    "angular-mocks": "~1.2.12"
+  }
+}

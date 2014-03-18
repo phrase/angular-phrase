@@ -1,0 +1,14 @@
+# angular-phrase
+
+angular-phrase is a powerful addon for [angular-translate](https://github.com/angular-translate/angular-translate) that lets you connect your localized angular application to the PhraseApp In-Context editor.
+
+## Install
+
+## Demo
+
+## Test
+
+Install Karma runner:
+
+    npm install -g karma
+    npm install karma-coffee-preprocessor --save-dev
