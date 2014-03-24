@@ -2,6 +2,7 @@ module.exports = (grunt) ->
 
   require('load-grunt-tasks')(grunt)
 
+  grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-coffee')
 
   grunt.initConfig
@@ -20,7 +21,7 @@ module.exports = (grunt) ->
 
     karma:
       unit:
-        configFile: "karma.unit.conf.js"
+        configFile: "karma.unit.conf.coffee"
         singleRun: true
 
     uglify:

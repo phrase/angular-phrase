@@ -1,0 +1,37 @@
+{
+  "name": "angular-phrase",
+  "version": "0.0.1",
+  "description": "Use angular-translate with the powerful PhraseApp In-Context-Editor for easy translation management in AngularJS applications",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/phrase/angular-phrase"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install",
+    "test": "./node_modules/karma/bin/karma start karma.unit.conf.js --single-run"
+  },
+  "author": {
+    "name": "Manuel Boy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "karma": "~0.10.9",
+    "grunt-karma": "~0.6.x",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.x",
+    "grunt-contrib-uglify": "~0.2.x",
+    "grunt-contrib-jshint": "~0.4.x",
+    "grunt-bump": "0.0.2",
+    "grunt-conventional-changelog": "0.0.12",
+    "grunt-express": "~0.3.3",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-ngmin": "0.0.2",
+    "express": "~3.2.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-ngdocs": "~0.1.11",
+    "grunt-contrib-coffee": "~0.10.1"
+  }
+}
