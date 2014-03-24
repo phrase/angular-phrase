@@ -34,7 +34,7 @@ module.exports = (config) ->
     # - Safari (only Mac)
     # - PhantomJS
     # - IE (only Windows)
-    browsers: ['Chrome']
+    browsers: [if process.env.TRAVIS then 'Firefox' else 'Chrome']
 
     captureTimeout: 60000
 
