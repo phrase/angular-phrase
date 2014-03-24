@@ -22,7 +22,15 @@ To use angular-phrase with your application you have to:
 
     bower install angular-phrase
 
-(or download it manually from the `build` folder)
+(or download it manually from the `dist` folder)
+
+
+### Build form source
+
+You can also build it directly from source to get the latest and greatest:
+
+    grunt build
+
 
 ### Add the module
 
