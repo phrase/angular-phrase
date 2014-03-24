@@ -81,11 +81,6 @@ Once the module is enabled it will:
 
 ## Test
 
-Install Karma runner:
+Run unit tests using grunt/Karma:
 
-    npm install -g karma
-    npm install karma-coffee-preprocessor --save-dev
-
-Run tests using Karma:
-
-    karma start karma.unit.conf.js
+    grunt karma:unit
