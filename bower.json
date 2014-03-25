@@ -18,6 +18,7 @@
     "phraseapp"
   ],
   "license": "MIT",
+  "main": "./dist/angular-phrase.js",
   "homepage": "https://github.com/phrase/angular-phrase",
   "ignore": [
     "**/.*",
@@ -30,7 +31,9 @@
     ".travis.yml",
     ".gitignore",
     ".bowerrc",
-    "build"
+    "karma.unit.conf.coffee",
+    "build",
+    "src"
   ],
   "devDependencies": {
     "angular": "~1.2.12",
