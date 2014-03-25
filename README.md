@@ -14,7 +14,10 @@ To use angular-phrase with your application you have to:
 
 ## Demo
 
-*coming soon.*
+See the In-Context-Editor in a demo application: [http://angular-phrase-demo.herokuapp.com/](http://angular-phrase-demo.herokuapp.com/)
+
+(Find the source code for the demo on GitHub: [angular-phrase-demo](https://github.com/phrase/angular-phrase-demo)
+
 
 ## Install
 
