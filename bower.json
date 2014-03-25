@@ -7,13 +7,15 @@
   "description": "Use angular-translate with the powerful PhraseApp In-Context-Editor for easy translation management in AngularJS applications",
   "keywords": [
     "angular",
+    "angularjs",
     "translate",
+    "tms",
+    "translation",
     "i18n",
     "l10n",
     "localization",
     "internationalization",
-    "phraseapp",
-    "angularjs"
+    "phraseapp"
   ],
   "license": "MIT",
   "homepage": "https://github.com/phrase/angular-phrase",
@@ -22,7 +24,13 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "Gruntfile.coffee",
+    "package.json",
+    ".travis.yml",
+    ".gitignore",
+    ".bowerrc",
+    "build"
   ],
   "devDependencies": {
     "angular": "~1.2.12",
