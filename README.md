@@ -68,6 +68,30 @@ Once the module is enabled it will:
 * fetch the Javascript application used to render the In-Context editor on top of your application
 
 
+## Using AngularJS with phrase gem or any other server side technology
+
+If you use the angular-phrase plugin in combination with the phrase gem or another server side mechanism that enables the In-Context-Editor, AngularJS might have problems if you use curly braces as PhraseApp decorator suffix/prefix since AngularJS thinks that you're rendered decoratated keys are AngularJS directives (which is not the case).
+
+You can easily solve this issue by using a different decorator syntax for your setup:
+
+#### angular-phrase configuration
+
+    app.value("phraseDecoratorPrefix", "[[__");
+    app.value("phraseDecoratorSuffix", "__]]");
+
+#### phrase gem
+
+    Phrase.prefix = "[[__"
+    Phrase.suffix = "__]]"
+
+#### JavaScript configuration
+
+    window.PHRASE_CONFIG = {
+      prefix: '[[__',
+      suffix: "__]]"
+    }
+
+
 ## TODO
 
 * ~~Add support for `translate` filter~~
