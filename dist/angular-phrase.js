@@ -3,7 +3,7 @@
 
   phrase = angular.module("phrase", ['pascalprecht.translate', 'ng']);
 
-  phrase.value("phraseAuthToken", "");
+  phrase.value("phraseProjectId", "");
 
   phrase.value("phraseEnabled", true);
 
@@ -35,15 +35,15 @@
   phrase = angular.module("phrase");
 
   phrase.directive("phraseJavascript", [
-    "phraseEnabled", "phraseAuthToken", "$window", function(phraseEnabled, phraseAuthToken, $window) {
+    "phraseEnabled", "phraseProjectId", "$window", function(phraseEnabled, phraseProjectId, $window) {
       return {
         restrict: "EA",
         replace: true,
         link: function() {
           var url;
           if (phraseEnabled) {
-            url = ['https://', 'phraseapp.com/assets/phrase/0.1/app.js?', new Date().getTime()].join('');
-            $window.phrase_auth_token = phraseAuthToken;
+            url = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('');
+            $window.PHRASEAPP_CONFIG = { projectId: phraseProjectId };
             return $window.jQuery.getScript(url);
           }
         }

@@ -1,11 +1,11 @@
 phrase = angular.module "phrase"
 
-phrase.directive "phraseJavascript", ["phraseEnabled", "phraseAuthToken", "$window", (phraseEnabled, phraseAuthToken, $window) ->
+phrase.directive "phraseJavascript", ["phraseEnabled", "phraseProjectId", "$window", (phraseEnabled, phraseProjectId, $window) ->
   restrict: "EA"
   replace: true
   link: () ->
     if phraseEnabled
-      url = ['https://', 'phraseapp.com/assets/phrase/0.1/app.js?', new Date().getTime()].join('')
-      $window.phrase_auth_token = phraseAuthToken
+      url = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('')
+      $window.PHRASEAPP_CONFIG = { projectId: phraseProjectId }
       $window.jQuery.getScript(url)
 ]

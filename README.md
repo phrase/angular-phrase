@@ -45,7 +45,7 @@ Add angular-phrase module to your existing AngularJS application _after_ loading
 
 Configure the module:
 
-	myApp.value("phraseAuthToken", "MY-AUTH-TOKEN");
+	myApp.value("phraseProjectId", "YOUR-PROJECT-ID");
 	myApp.value("phraseEnabled", true);
 	myApp.value("phraseDecoratorPrefix", "{{__");
 	myApp.value("phraseDecoratorSuffix", "__}}");

@@ -1,6 +1,6 @@
 phrase = angular.module "phrase", ['pascalprecht.translate', 'ng']
 
-phrase.value "phraseAuthToken", ""
+phrase.value "phraseProjectId", ""
 phrase.value "phraseEnabled", true
 phrase.value "phraseDecoratorPrefix", "{{__"
 phrase.value "phraseDecoratorSuffix", "__}}"
