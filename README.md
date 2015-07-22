@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/phrase/angular-phrase.png)](https://travis-ci.org/phrase/angular-phrase)
 
-angular-phrase is an addon for [angular-translate](https://github.com/angular-translate/angular-translate) that lets you connect localized AngularJS applications to the PhraseApp In-Context editor.
+angular-phrase is an addon for [angular-translate](https://github.com/angular-translate/angular-translate) that lets you connect localized AngularJS applications to the PhraseApp In-Context Editor.
 
 ## Prerequisites
 
@@ -14,10 +14,9 @@ To use angular-phrase with your application you have to:
 
 ## Demo
 
-See the In-Context-Editor in a demo application: [http://angular-phrase-demo.herokuapp.com/](http://angular-phrase-demo.herokuapp.com/)
+See the In-Context Editor in a demo application: [http://angular-phrase-demo.herokuapp.com/](http://angular-phrase-demo.herokuapp.com/)
 
 (Find the source code for the demo on GitHub: [angular-phrase-demo](https://github.com/phrase/angular-phrase-demo)
-
 
 ## Install
 
@@ -27,13 +26,11 @@ See the In-Context-Editor in a demo application: [http://angular-phrase-demo.her
 
 (or download it manually from the `dist` folder)
 
-
 ### Build form source
 
 You can also build it directly from source to get the latest and greatest:
 
     grunt build
-
 
 ### Add the module
 
@@ -50,27 +47,25 @@ Configure the module:
 	myApp.value("phraseDecoratorPrefix", "{{__");
 	myApp.value("phraseDecoratorSuffix", "__}}");
 
-### Javascript snippet
+### JavaScript snippet
 
 Add the `phrase-javascript` directive within your application, usually best within the `<head>`:
 
     <phrase-javascript></phrase-javascript>
 
-If this does not work for you, you can also integrate the [Javscript snippet manually](https://phraseapp.com/docs/installation/phrase-javascript).
-
+If this does not work for you, you can also integrate the [JavaScript snippet manually](http://docs.phraseapp.com/guides/in-context-editor/custom-integration/).
 
 ## How does it work?
 
 Once the module is enabled it will:
 
-* override the $translate service and provide placeholders that can be picked up by the PhraseApp [In-Context-Editor](https://phraseapp.com/en/features/in-context-editor)
+* override the $translate service and provide placeholders that can be picked up by the PhraseApp [In-Context Editor](https://phraseapp.com/features)
 
-* fetch the Javascript application used to render the In-Context editor on top of your application
+* fetch the JavaScript application used to render the In-Context Editor on top of your application
 
+## Using AngularJS with phraseapp-in-context-editor-ruby gem or any other server side technology
 
-## Using AngularJS with phrase gem or any other server side technology
-
-If you use the angular-phrase plugin in combination with the phrase gem or another server side mechanism that enables the In-Context-Editor, AngularJS might have problems if you use curly braces as PhraseApp decorator suffix/prefix since AngularJS thinks that you're rendered decoratated keys are AngularJS directives (which is not the case).
+If you use the angular-phrase plugin in combination with the phraseapp-in-context-editor-ruby gem or another server side technology that enables the In-Context Editor, AngularJS might have problems if you use curly braces as the decorator suffix/prefix since AngularJS thinks that youre decoratated keys are AngularJS directives (which is not the case).
 
 You can easily solve this issue by using a different decorator syntax for your setup:
 
@@ -79,18 +74,17 @@ You can easily solve this issue by using a different decorator syntax for your s
     app.value("phraseDecoratorPrefix", "[[__");
     app.value("phraseDecoratorSuffix", "__]]");
 
-#### phrase gem
+#### phraseapp-in-context-editor-ruby gem configuration
 
-    Phrase.prefix = "[[__"
-    Phrase.suffix = "__]]"
+    PhraseApp::InContextEditor.prefix = "[[__"
+    PhraseApp::InContextEditor.suffix = "__]]"
 
 #### JavaScript configuration
 
-    window.PHRASE_CONFIG = {
+    window.PHRASEAPP_CONFIG = {
       prefix: '[[__',
       suffix: "__]]"
     }
-
 
 ## TODO
 
@@ -98,13 +92,11 @@ You can easily solve this issue by using a different decorator syntax for your s
 * Add support for `translate` directive
 * Add support for interpolation values
 
-
 ## Support
 
-**Question?** File a support ticket at: [support.phraseapp.com](http://support.phraseapp.com)
+**Question?** Contact us at: [phraseapp.com/contact](https://phraseapp.com/contact)
 
 **Issue?** use GitHub issues and share the problem
-
 
 ## Test
 
