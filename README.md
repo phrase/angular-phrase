@@ -47,6 +47,8 @@ Configure the module:
 	myApp.value("phraseDecoratorPrefix", "{{__");
 	myApp.value("phraseDecoratorSuffix", "__}}");
 
+You can find the Project-ID in the Project overview in the PhraseApp Translation Center
+
 ### JavaScript snippet
 
 Add the `phrase-javascript` directive within your application, usually best within the `<head>`:
