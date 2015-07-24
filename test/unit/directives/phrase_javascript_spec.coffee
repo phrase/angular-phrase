@@ -10,14 +10,14 @@ describe 'phraseJavascript', ->
     jQuery: {}
   }
   enabled = null
-  authToken = "my-auth-token"
+  projectId = "my-project-id"
 
   beforeEach ->
     module('phrase')
     module ($provide) ->
       window.jQuery.getScript = jasmine.createSpy("getScript")
       $provide.value('$window', window)
-      $provide.value('phraseAuthToken', authToken)
+      $provide.value('phraseProjectId', projectId)
       $provide.value('phraseEnabled', enabled)
       null
 
@@ -34,8 +34,8 @@ describe 'phraseJavascript', ->
         compiled = $compile(elem)(scope)
         scope.$digest()
 
-    it "should not attach the auth token", ->
-      expect(window.phrase_auth_token).toBeUndefined()
+    it "should not attach the project id", ->
+      expect(window.phrase_project_id).toBeUndefined()
 
     it "should not fetch the javascript snippet", ->
       expect(window.jQuery.getScript).not.toHaveBeenCalled()
@@ -53,8 +53,8 @@ describe 'phraseJavascript', ->
         compiled = $compile(elem)(scope)
         scope.$digest()
 
-    it "should attach the auth token as a global variable", ->
-      expect(window.phrase_auth_token).toEqual("my-auth-token")
+    it "should attach the project id as a global variable", ->
+      expect(window.PHRASEAPP_CONFIG = {phrase_project_id}).toEqual("my-project-id")
 
     it "should fetch and evaluate the javascript snippet", ->
       expect(window.jQuery.getScript).toHaveBeenCalled()
