@@ -27,6 +27,35 @@
     }
   ]);
 
+  phrase.config([
+    "$compileProvider", function($compileProvider) {
+      return $compileProvider.directive('translate', [
+        "phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix", function(phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) {
+          if (phraseEnabled) {
+            return {
+              priority: 1001,
+              terminal: true,
+              restrict: 'AE',
+              scope: true,
+              compile: function(elem, attr) {
+                var decoratedTranslationId, translationId;
+                translationId = elem.attr("translate");
+                decoratedTranslationId = phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
+                if (attr.translateValues) {
+                  decoratedTranslationId = decoratedTranslationId + " (" + attr.translateValues + ")";
+                }
+                elem.html(decoratedTranslationId);
+                return elem.removeAttr("translate");
+              }
+            };
+          } else {
+            return {};
+          }
+        }
+      ]);
+    }
+  ]);
+
 }).call(this);
 
 (function() {
