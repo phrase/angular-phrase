@@ -54,7 +54,7 @@ describe 'phraseJavascript', ->
         scope.$digest()
 
     it "should attach the project id as a global variable", ->
-      expect(window.PHRASEAPP_CONFIG = {phrase_project_id}).toEqual("my-project-id")
+      expect(window.PHRASEAPP_CONFIG.projectId).toEqual("my-project-id")
 
     it "should fetch and evaluate the javascript snippet", ->
       expect(window.jQuery.getScript).toHaveBeenCalled()
