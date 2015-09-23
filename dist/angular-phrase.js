@@ -18,7 +18,7 @@
           if (phraseEnabled) {
             $translate._instant = $translate.instant;
             $translate.instant = function(translationId, interpolateParams, interpolationId) {
-              return "" + phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
+              return phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
             };
           }
           return $translate;
@@ -43,7 +43,9 @@
           var url;
           if (phraseEnabled) {
             url = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('');
-            $window.PHRASEAPP_CONFIG = { projectId: phraseProjectId };
+            $window.PHRASEAPP_CONFIG = {
+              projectId: phraseProjectId
+            };
             return $window.jQuery.getScript(url);
           }
         }
