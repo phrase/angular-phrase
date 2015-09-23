@@ -94,9 +94,9 @@ You can easily solve this issue by using a different decorator syntax for your s
 
 ## TODO
 
-* ~~Add support for `translate` filter~~
-* Add support for `translate` directive
-* Add support for interpolation values
+* [x] Add support for `translate` filter
+* [ ] Add support for `translate` directive
+* [ ] Add support for interpolation values
 
 ## Support
 
