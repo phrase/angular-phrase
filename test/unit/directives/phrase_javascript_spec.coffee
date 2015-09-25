@@ -34,8 +34,8 @@ describe 'phraseJavascript', ->
         compiled = $compile(elem)(scope)
         scope.$digest()
 
-    it "should not attach the project id", ->
-      expect(window.phrase_project_id).toBeUndefined()
+    it "should not attach the config", ->
+      expect(window.PHRASEAPP_CONFIG).toBeUndefined()
 
     it "should not fetch the javascript snippet", ->
       expect(window.jQuery.getScript).not.toHaveBeenCalled()
