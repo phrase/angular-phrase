@@ -27,12 +27,17 @@ phrase.config ["$compileProvider", ($compileProvider) ->
         restrict: 'AE',
         scope: true,
         compile: (elem, attr) ->
-          translationId = elem.attr("translate")
-          decoratedTranslationId = "#{phraseDecoratorPrefix}phrase_#{translationId}#{phraseDecoratorSuffix}"
-          if attr.translateValues
-            decoratedTranslationId = "#{decoratedTranslationId} (#{attr.translateValues})"
-          elem.html(decoratedTranslationId);
-          elem.removeAttr("translate")
+          if elem.is("[translate]") and !!elem.attr("translate")
+            translationId = elem.attr("translate")
+          else if elem.is("[translate]")
+            translationId = elem.text()
+
+          if translationId
+            decoratedTranslationId = "#{phraseDecoratorPrefix}phrase_#{translationId}#{phraseDecoratorSuffix}"
+            if attr.translateValues
+              decoratedTranslationId = "#{decoratedTranslationId} (#{attr.translateValues})"
+            elem.html(decoratedTranslationId);
+            elem.removeAttr("translate")
       }
     else
       return {}

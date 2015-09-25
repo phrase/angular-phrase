@@ -39,13 +39,19 @@
               scope: true,
               compile: function(elem, attr) {
                 var decoratedTranslationId, translationId;
-                translationId = elem.attr("translate");
-                decoratedTranslationId = phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
-                if (attr.translateValues) {
-                  decoratedTranslationId = decoratedTranslationId + " (" + attr.translateValues + ")";
+                if (elem.is("[translate]") && !!elem.attr("translate")) {
+                  translationId = elem.attr("translate");
+                } else if (elem.is("[translate]")) {
+                  translationId = elem.text();
                 }
-                elem.html(decoratedTranslationId);
-                return elem.removeAttr("translate");
+                if (translationId) {
+                  decoratedTranslationId = phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
+                  if (attr.translateValues) {
+                    decoratedTranslationId = decoratedTranslationId + " (" + attr.translateValues + ")";
+                  }
+                  elem.html(decoratedTranslationId);
+                  return elem.removeAttr("translate");
+                }
               }
             };
           } else {
