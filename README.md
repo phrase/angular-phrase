@@ -92,6 +92,8 @@ You can easily solve this issue by using a different decorator syntax for your s
       suffix: "__]]"
     }
 
+*This is only necessary if you're not using the phraseJavascript` directive*
+
 ## TODO
 
 * [x] Add support for `translate` filter
