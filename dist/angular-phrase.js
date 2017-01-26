@@ -11,6 +11,8 @@
 
   phrase.value("phraseDecoratorSuffix", "__}}");
 
+  phrase.value("phraseAutoLowercase", true);
+
   phrase.config([
     "$provide", function($provide) {
       return $provide.decorator("$translate", [
@@ -72,7 +74,7 @@
   phrase = angular.module("phrase");
 
   phrase.directive("phraseJavascript", [
-    "phraseEnabled", "phraseProjectId", "$window", function(phraseEnabled, phraseProjectId, $window) {
+    "phraseEnabled", "phraseProjectId", "phraseAutoLowercase", "$window", function(phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) {
       return {
         restrict: "EA",
         replace: true,
@@ -81,7 +83,8 @@
           if (phraseEnabled) {
             url = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('');
             $window.PHRASEAPP_CONFIG = {
-              projectId: phraseProjectId
+              projectId: phraseProjectId,
+              autoLowercase: phraseAutoLowercase
             };
             return $window.jQuery.getScript(url);
           }

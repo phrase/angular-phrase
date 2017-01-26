@@ -9,7 +9,9 @@ describe 'phraseJavascript', ->
   window = {
     jQuery: {}
   }
+
   enabled = null
+  autoLowercase = false
   projectId = "my-project-id"
 
   beforeEach ->
@@ -19,6 +21,7 @@ describe 'phraseJavascript', ->
       $provide.value('$window', window)
       $provide.value('phraseProjectId', projectId)
       $provide.value('phraseEnabled', enabled)
+      $provide.value('phraseAutoLowercase', autoLowercase)
       null
 
   describe "phrase is disabled", ->
@@ -53,8 +56,12 @@ describe 'phraseJavascript', ->
         compiled = $compile(elem)(scope)
         scope.$digest()
 
-    it "should attach the project id as a global variable", ->
-      expect(window.PHRASEAPP_CONFIG.projectId).toEqual("my-project-id")
-
     it "should fetch and evaluate the javascript snippet", ->
       expect(window.jQuery.getScript).toHaveBeenCalled()
+
+    describe "configuration", ->
+      it "should attach the project id to the config object", ->
+        expect(window.PHRASEAPP_CONFIG.projectId).toEqual("my-project-id")
+
+      it "should attach the autoLowercase setting to the config object", ->
+        expect(window.PHRASEAPP_CONFIG.autoLowercase).toEqual(false)

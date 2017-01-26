@@ -4,6 +4,7 @@ phrase.value "phraseProjectId", ""
 phrase.value "phraseEnabled", true
 phrase.value "phraseDecoratorPrefix", "{{__"
 phrase.value "phraseDecoratorSuffix", "__}}"
+phrase.value "phraseAutoLowercase", true
 
 phrase.config ["$provide", ($provide) ->
   $provide.decorator "$translate", ["$delegate", "phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix", ($translate, phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) ->
