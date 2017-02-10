@@ -22,9 +22,13 @@ Password: phrase
 
 (Find the source code for the demo on GitHub: [angular-phrase-demo](https://github.com/phrase/angular-phrase-demo)
 
-## Install
+## Installation
 
-### Install angular-phrase via Bower:
+### via NPM:
+
+    npm install angular-phrase
+
+### via Bower:
 
     bower install angular-phrase
 
