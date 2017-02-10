@@ -7,12 +7,14 @@
     "url": "git+ssh://git@github.com/phrase/angular-phrase.git"
   },
   "scripts": {
+    "postinstall": "bower install",
     "test": "./node_modules/karma/bin/karma start karma.unit.conf.coffee --single-run",
     "build": "grunt build"
   },
   "author": "Manuel Boy <support@phraseapp.com> (https://phraseapp.com)",
   "license": "MIT",
   "devDependencies": {
+    "coffee-script": "^1.12.3",
     "bower": "^1.5.3",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.0.2",
