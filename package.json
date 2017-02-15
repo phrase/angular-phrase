@@ -7,7 +7,7 @@
     "url": "git+ssh://git@github.com/phrase/angular-phrase.git"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "pretest": "bower install",
     "test": "./node_modules/karma/bin/karma start karma.unit.conf.coffee --single-run",
     "build": "grunt build"
   },
