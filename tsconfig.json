@@ -1,0 +1,22 @@
+{
+  "files": [
+    "src/angular-phrase.ts"
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "none",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "noEmit": true,
+    "alwaysStrict": false,
+    "outFile": "dist/angular-phrase.js"
+  },
+  "exclude": [
+      "typings/index.d.ts",
+      "node_modules"
+  ]
+}

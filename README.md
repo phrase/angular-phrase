@@ -40,6 +40,10 @@ You can also build it directly from source to get the latest and greatest:
 
     grunt build
 
+### Development
+
+		typings install dt~angular@1.2 --global
+
 ### Add the module
 
 Add angular-phrase module to your existing AngularJS application _after_ loading the `angular-translate` module:
