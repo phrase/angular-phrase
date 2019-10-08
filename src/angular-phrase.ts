@@ -1,4 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
+/// <reference types="angular" />
 var phrase = angular.module("phrase", ['pascalprecht.translate', 'ng'])
 
 phrase.value("phraseProjectId", "")

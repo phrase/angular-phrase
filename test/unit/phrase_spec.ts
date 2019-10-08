@@ -1,4 +1,6 @@
-/// <reference path="../../typings/index.d.ts" />
+/// <reference types="angular" />
+/// <reference types="jasmine" />
+/// <reference types="angular-mocks" />
 describe("phrase", function () {
   beforeEach(function () {
     return angular.mock.module('phrase')

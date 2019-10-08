@@ -1,4 +1,6 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference types="angular" />
+/// <reference types="jasmine" />
+/// <reference types="angular-mocks" />
 describe('phraseJavascript', () => {
   var autoLowercase, compiled, directive, elem, enabled, html, projectId, scope, window
   var $compile : ng.ICompileService
