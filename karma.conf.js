@@ -9,9 +9,9 @@ module.exports = function(config) {
       'src/**/*.ts': ['webpack']
     },
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-translate/angular-translate.js',
-      'bower_components/angular-mocks/angular-mocks.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-translate/dist/angular-translate.js',
+      'node_modules/angular-mocks/angular-mocks.js',
       'src/angular-phrase.ts',
       'test/**/*.ts'
     ],

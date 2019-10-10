@@ -28,10 +28,6 @@ Password: phrase
 
     npm install angular-phrase
 
-### via Bower:
-
-    bower install angular-phrase
-
 (or download it manually from the `dist` folder)
 
 ### Build form source
