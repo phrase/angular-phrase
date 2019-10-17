@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "angular-mocks": "registry:dt/angular-mocks#1.5.0+20170201235656"
-  },
-  "globalDependencies": {
-    "angular": "registry:dt/angular#1.2.0+20150719215757",
-    "jasmine": "registry:dt/jasmine#2.5.0+20170207112528"
-  }
-}

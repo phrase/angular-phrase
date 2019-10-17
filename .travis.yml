@@ -1,7 +1,7 @@
 dist: trusty
 language: node_js
 node_js:
-  - "7.6.0"
+  - "10.16.3"
 
 before_install:
   - "export DISPLAY=:99.0"
@@ -9,5 +9,4 @@ before_install:
   - sleep 3
 
 install:
-  - npm install -g grunt-cli karma-cli
-  - npm install
+  - yarn

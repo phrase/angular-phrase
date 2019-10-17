@@ -3,20 +3,26 @@
     "src/angular-phrase.ts"
   ],
   "compilerOptions": {
-    "target": "es5",
-    "module": "none",
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
     "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
-    "noEmit": true,
-    "alwaysStrict": false,
-    "outFile": "dist/angular-phrase.js"
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "module": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "esModuleInterop": true
   },
   "exclude": [
-      "typings/index.d.ts",
-      "node_modules"
+    "node_modules"
+  ],
+  "include": [
+    "src"
   ]
 }
