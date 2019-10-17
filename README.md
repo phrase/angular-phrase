@@ -10,11 +10,10 @@ To use angular-phrase with your application you have to:
 
 * Sign up for a Phrase account: [https://phrase.com/en/signup](https://phrase.com/en/signup)
 * Use the excellent [angular-translate](https://github.com/angular-translate/angular-translate) module by Pascal Precht for localization in your AngularJS app
-* Have jQuery included
 
 ## Demo
 
-E-Mail: demo@phrase.com
+E-Mail: demo@phraseapp.com
 
 Password: phrase
 
@@ -28,23 +27,23 @@ Password: phrase
 
     npm install angular-phrase
 
+### via YARN:
+
+    yarn add angular-phrase
+
 (or download it manually from the `dist` folder)
 
 ### Build form source
 
 You can also build it directly from source to get the latest and greatest:
 
-    grunt build
-
-### Development
-
-		typings install dt~angular@1.2 --global
+    npm build
 
 ### Add the module
 
 Add angular-phrase module to your existing AngularJS application _after_ loading the `angular-translate` module:
 
-	var myApp = angular.module("myApp", ['pascalprecht.translate', 'phrase'])
+	const myApp = angular.module("myApp", ['pascalprecht.translate', 'phrase'])
 
 ### Configure
 
@@ -63,7 +62,7 @@ Add the `phrase-javascript` directive within your application, usually best with
 
     <phrase-javascript></phrase-javascript>
 
-If this does not work for you, you can also integrate the [JavaScript snippet manually](http://docs.phrase.com/guides/in-context-editor/custom-integration/).
+If this does not work for you, you can also integrate the [JavaScript snippet manually](https://help.phrase.com/en/articles/2183908-integrate-in-context-editor-into-any-web-framework/).
 
 ## How does it work?
 
@@ -112,6 +111,6 @@ You can easily solve this issue by using a different decorator syntax for your s
 
 ## Test
 
-Run unit tests using grunt/Karma:
+Run unit tests using Karma with webpack:
 
-    grunt karma:unit
+    npm test
