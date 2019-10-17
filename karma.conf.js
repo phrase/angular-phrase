@@ -1,46 +1,33 @@
-var webpackConfig = require('./webpack.config.js');
-
+const webpackConfig = require('./webpack.config.js');
 module.exports = function(config) {
-  config.set({
-    basePath: '',
-    frameworks: ['jasmine'],
-    preprocessors: {
-      'test/**/*.ts': ['webpack'],
-      'src/**/*.ts': ['webpack']
-    },
-    files: [
-      'node_modules/angular/angular.js',
-      'node_modules/angular-translate/dist/angular-translate.js',
-      'node_modules/angular-mocks/angular-mocks.js',
-      'src/angular-phrase.ts',
-      'test/**/*.ts'
-    ],
-    mime: {
-      'text/x-typescript': ['ts','tsx']
-    },
-    webpack: {
-      module: webpackConfig.module,
-      resolve: webpackConfig.resolve
-    },
-    exclude: [],
-    reports: ['progress'],
-    port: 9876,
-    colors: true,
-    // LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
-    captureTimeout: 60000,
-    autoWatch: true,
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
-    })
-  }
+    config.set({
+        basePath: '',
+        frameworks: ['jasmine'],
+        files: [
+            'node_modules/angular/angular.js',
+            'node_modules/angular-translate/dist/angular-translate.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'src/angular-phrase.ts',
+            'test/**/*.ts'
+        ],
+        exclude: [],
+        preprocessors: {
+            'test/**/*.ts': ['webpack'],
+            'src/**/*.ts': ['webpack']
+        },
+        webpack: {
+            module: webpackConfig().module,
+            resolve: webpackConfig().resolve,
+            mode: "development"
+        },
+        reporters: ['spec'],
+        port: 9876,
+        colors: true,
+        logLevel: config.LOG_INFO,
+        captureTimeout: 60000,
+        autoWatch: true,
+        browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
+        singleRun: false,
+        concurrency: Infinity,
+    });
+};
