@@ -1,6 +1,6 @@
 {
   "name": "angular-phrase",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Use angular-translate with the powerful Phrase In-Context-Editor for easy translation management in AngularJS applications",
   "repository": {
     "type": "git",
