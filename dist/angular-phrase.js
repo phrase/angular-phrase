@@ -86,40 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/Data_utils.ts":
-/*!***************************!*\
-  !*** ./src/Data_utils.ts ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var DataUtils = /** @class */ (function () {
-    function DataUtils() {
-    }
-    DataUtils.getScript = function (source, callback) {
-        var script = document.createElement('script');
-        var prior = document.getElementsByTagName('script')[0];
-        script.async = true;
-        script.onload = script.onreadystatechange = function (_, isAbort) {
-            if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
-                script.onload = script.onreadystatechange = null;
-                script = undefined;
-                if (!isAbort && callback)
-                    setTimeout(callback, 0);
-            }
-        };
-        script.src = source;
-        prior.parentNode.insertBefore(script, prior);
-    };
-    return DataUtils;
-}());
-/* harmony default export */ __webpack_exports__["default"] = (DataUtils);
-
-
-/***/ }),
-
 /***/ "./src/angular-phrase.ts":
 /*!*******************************!*\
   !*** ./src/angular-phrase.ts ***!
@@ -129,7 +95,7 @@ var DataUtils = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Data_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Data_utils */ "./src/Data_utils.ts");
+/* harmony import */ var _data_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data-utils */ "./src/data-utils.ts");
 
 var phrase = angular.module("phrase", ['pascalprecht.translate', 'ng']);
 phrase.value("phraseProjectId", "");
@@ -138,8 +104,7 @@ phrase.value("phraseDecoratorPrefix", "{{__");
 phrase.value("phraseDecoratorSuffix", "__}}");
 phrase.value("phraseAutoLowercase", true);
 phrase.config(["$provide", function ($provide) {
-        return $provide.decorator("$translate", ["$delegate", "phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix",
-            function ($translate, phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) {
+        return $provide.decorator("$translate", ["$delegate", "phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix", function ($translate, phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) {
                 if (phraseEnabled) {
                     $translate._instant = $translate.instant;
                     $translate.instant = function (translationId) { return phraseDecoratorPrefix + "phrase_" + (translationId + phraseDecoratorSuffix); };
@@ -148,8 +113,7 @@ phrase.config(["$provide", function ($provide) {
             }]);
     }]);
 phrase.config(["$compileProvider", function ($compileProvider) {
-        return $compileProvider.directive('translate', ["phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix",
-            function (phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) {
+        return $compileProvider.directive('translate', ["phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix", function (phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) {
                 if (!phraseEnabled) {
                     return {};
                 }
@@ -180,8 +144,7 @@ phrase.config(["$compileProvider", function ($compileProvider) {
                 };
             }]);
     }]);
-phrase.directive("phraseJavascript", ["phraseEnabled", "phraseProjectId", "phraseAutoLowercase", "$window",
-    function (phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) {
+phrase.directive("phraseJavascript", ["phraseEnabled", "phraseProjectId", "phraseAutoLowercase", "$window", function (phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) {
         return {
             restrict: "EA",
             replace: true,
@@ -192,11 +155,45 @@ phrase.directive("phraseJavascript", ["phraseEnabled", "phraseProjectId", "phras
                         projectId: phraseProjectId,
                         autoLowercase: phraseAutoLowercase,
                     };
-                    _Data_utils__WEBPACK_IMPORTED_MODULE_0__["default"].getScript(url);
+                    _data_utils__WEBPACK_IMPORTED_MODULE_0__["default"].getScript(url);
                 }
             }
         };
     }]);
+
+
+/***/ }),
+
+/***/ "./src/data-utils.ts":
+/*!***************************!*\
+  !*** ./src/data-utils.ts ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var DataUtils = /** @class */ (function () {
+    function DataUtils() {
+    }
+    DataUtils.getScript = function (source, callback) {
+        var script = document.createElement('script');
+        var prior = document.getElementsByTagName('script')[0];
+        script.async = true;
+        script.onload = script.onreadystatechange = function (_, isAbort) {
+            if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
+                script.onload = script.onreadystatechange = null;
+                script = undefined;
+                if (!isAbort && callback)
+                    setTimeout(callback, 0);
+            }
+        };
+        script.src = source;
+        prior.parentNode.insertBefore(script, prior);
+    };
+    return DataUtils;
+}());
+/* harmony default export */ __webpack_exports__["default"] = (DataUtils);
 
 
 /***/ })
