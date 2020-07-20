@@ -107,7 +107,15 @@ phrase.config(["$provide", function ($provide) {
         return $provide.decorator("$translate", ["$delegate", "phraseEnabled", "phraseDecoratorPrefix", "phraseDecoratorSuffix", function ($translate, phraseEnabled, phraseDecoratorPrefix, phraseDecoratorSuffix) {
                 if (phraseEnabled) {
                     $translate._instant = $translate.instant;
-                    $translate.instant = function (translationId) { return phraseDecoratorPrefix + "phrase_" + (translationId + phraseDecoratorSuffix); };
+                    $translate.instant = function (translationId) {
+                        if (typeof translationId === "object") {
+                            return translationId.reduce(function (prev, curr) {
+                                prev[curr] = phraseDecoratorPrefix + "phrase_" + curr + phraseDecoratorSuffix;
+                                return prev;
+                            }, {});
+                        }
+                        return phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
+                    };
                 }
                 return $translate;
             }]);
@@ -176,18 +184,10 @@ __webpack_require__.r(__webpack_exports__);
 var DataUtils = /** @class */ (function () {
     function DataUtils() {
     }
-    DataUtils.getScript = function (source, callback) {
+    DataUtils.getScript = function (source) {
         var script = document.createElement('script');
         var prior = document.getElementsByTagName('script')[0];
         script.async = true;
-        script.onload = script.onreadystatechange = function (_, isAbort) {
-            if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
-                script.onload = script.onreadystatechange = null;
-                script = undefined;
-                if (!isAbort && callback)
-                    setTimeout(callback, 0);
-            }
-        };
         script.src = source;
         prior.parentNode.insertBefore(script, prior);
     };
