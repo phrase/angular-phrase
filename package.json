@@ -1,7 +1,7 @@
 {
   "name": "angular-phrase",
   "version": "2.1.6",
-  "description": "Use angular-translate with the powerful PhraseApp In-Context-Editor for easy translation management in AngularJS applications",
+  "description": "Use angular-translate with the powerful Phrase In-Context-Editor for easy translation management in AngularJS applications",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/phrase/angular-phrase.git"
@@ -13,7 +13,7 @@
     "lint": "eslint src/**",
     "fix": "eslint --fix src/**"
   },
-  "author": "Manuel Boy <support@phraseapp.com> (https://phraseapp.com)",
+  "author": "Manuel Boy <support@phrase.com> (https://phrase.com)",
   "license": "MIT",
   "devDependencies": {
     "@types/angular": "^1.7.2",
@@ -47,7 +47,7 @@
   ],
   "bugs": {
     "url": "https://github.com/angular-translate/angular-translate/issues",
-    "email": "support@phraseapp.com"
+    "email": "support@phrase.com"
   },
   "homepage": "https://github.com/phrase/angular-phrase#readme",
   "main": "dist/angular-phrase.js",
@@ -65,6 +65,7 @@
     "l10n",
     "localization",
     "internationalization",
-    "phraseapp"
+    "phraseapp",
+    "phrase"
   ]
 }
