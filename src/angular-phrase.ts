@@ -76,7 +76,7 @@ phrase.directive("phraseJavascript", ["phraseEnabled", "phraseProjectId", "phras
             replace: true,
             link: (): void => {
                 if (phraseEnabled) {
-                    const url = `https://phraseapp.com/assets/in-context-editor/2.0/app.js?${new Date().getTime()}`;
+                    const url = `https://phrase.com/assets/in-context-editor/2.0/app.js?${new Date().getTime()}`;
                     $window.PHRASEAPP_CONFIG = {
                         projectId: phraseProjectId,
                         autoLowercase: phraseAutoLowercase,
