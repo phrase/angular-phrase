@@ -13,7 +13,7 @@ To use angular-phrase with your application you have to:
 
 ## Demo
 
-E-Mail: demo@phraseapp.com
+E-Mail: demo@phrase.com
 
 Password: phrase
 
