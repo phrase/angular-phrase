@@ -103,14 +103,13 @@ You can easily solve this issue by using a different decorator syntax for your s
 * [x] Add support for `translate` directive
 * [ ] Add support for interpolation values
 
-## Support
-
-**Question?** Contact us at: [phrase.com/contact](https://phrase.com/contact)
-
-**Issue?** use GitHub issues and share the problem
 
 ## Test
 
 Run unit tests using Karma with webpack:
 
     npm test
+
+## Get help / support
+
+Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20) and we can take more direct action toward finding a solution.
