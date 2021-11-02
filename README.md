@@ -11,16 +11,6 @@ To use angular-phrase with your application you have to:
 * Sign up for a Phrase account: [https://phrase.com/en/signup](https://phrase.com/en/signup)
 * Use the excellent [angular-translate](https://github.com/angular-translate/angular-translate) module by Pascal Precht for localization in your AngularJS app
 
-## Demo
-
-E-Mail: demo@phrase.com
-
-Password: phrase
-
-[http://angular-phrase-demo.herokuapp.com/](http://angular-phrase-demo.herokuapp.com/)
-
-(Find the source code for the demo on GitHub: [angular-phrase-demo](https://github.com/phrase/angular-phrase-demo)
-
 ## Installation
 
 ### via NPM:
