@@ -80,6 +80,7 @@ phrase.directive("phraseJavascript", ["phraseEnabled", "phraseProjectId", "phras
                     $window.PHRASEAPP_CONFIG = {
                         projectId: phraseProjectId,
                         autoLowercase: phraseAutoLowercase,
+                        origin: "angular-phrase"
                     };
                     DataUtils.getScript(url);
                 }

@@ -158,10 +158,11 @@ phrase.directive("phraseJavascript", ["phraseEnabled", "phraseProjectId", "phras
             replace: true,
             link: function () {
                 if (phraseEnabled) {
-                    var url = "https://phraseapp.com/assets/in-context-editor/2.0/app.js?" + new Date().getTime();
+                    var url = "https://phrase.com/assets/in-context-editor/2.0/app.js?" + new Date().getTime();
                     $window.PHRASEAPP_CONFIG = {
                         projectId: phraseProjectId,
                         autoLowercase: phraseAutoLowercase,
+                        origin: "angular-phrase"
                     };
                     _data_utils__WEBPACK_IMPORTED_MODULE_0__["default"].getScript(url);
                 }

@@ -69,6 +69,9 @@ describe('phraseJavascript', () => {
             it("should attach the autoLowercase setting to the config object", () => {
                 expect((window as any).PHRASEAPP_CONFIG.autoLowercase).toBeFalsy();
             });
+            it("should attach the origin to the config object", () => {
+                expect((window as any).PHRASEAPP_CONFIG.origin).toBe("angular-phrase");
+            });
         });
     });
 });
