@@ -1,6 +1,6 @@
 const webpackConfig = require('./webpack.config.js');
 module.exports = function(config) {
-    config.set({
+    const configuration = {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
@@ -20,14 +20,31 @@ module.exports = function(config) {
             resolve: webpackConfig().resolve,
             mode: "development"
         },
+        webpackMiddleware: {
+            stats: 'errors-only'
+        },
         reporters: ['spec'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         captureTimeout: 60000,
         autoWatch: true,
-        browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
+        browsers: [process.env.TRAVIS ? 'Firefox' : 'ChromeHeadless'],
+        customLaunchers: {
+            FirefoxHeadless: {
+                base: 'Firefox',
+                flags: ['-headless'],
+            }
+        },
         singleRun: false,
         concurrency: Infinity,
-    });
+    };
+
+    // Handle --configuration=ci parameter
+    if (process.argv.includes('--configuration=ci')) {
+        configuration.browsers = ['FirefoxHeadless'];
+        configuration.singleRun = true;
+    }
+
+    config.set(configuration);
 };

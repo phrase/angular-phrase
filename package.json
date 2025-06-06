@@ -7,7 +7,8 @@
     "url": "git+ssh://git@github.com/phrase/angular-phrase.git"
   },
   "scripts": {
-    "test": "npm lint | karma start --single-run",
+    "test": "npm run lint && karma start",
+    "test:ci": "npm run lint && karma start --configuration=ci --single-run",
     "start": "webpack --mode development --w",
     "build": "webpack --mode development | webpack --mode production",
     "lint": "eslint src/**",
