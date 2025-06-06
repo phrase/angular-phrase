@@ -7,7 +7,8 @@
     "url": "git+ssh://git@github.com/phrase/angular-phrase.git"
   },
   "scripts": {
-    "test": "npm lint | karma start --single-run",
+    "test": "npm run lint && karma start",
+    "test:ci": "npm run lint && karma start --configuration=ci --single-run",
     "start": "webpack --mode development --w",
     "build": "webpack --mode development | webpack --mode production",
     "lint": "eslint src/**",
@@ -20,6 +21,7 @@
     "@types/angular-mocks": "^1.7.0",
     "@types/angular-translate": "^2.16.2",
     "@types/jasmine": "^3.5.11",
+    "@types/node": "^14.14.10",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
     "angular": "^1.7.8",
@@ -27,7 +29,7 @@
     "angular-translate": "^2.18.3",
     "eslint": "^7.5.0",
     "eslint-config-phrase": "git+https://github.com/phrase/eslint-config-phrase.git#v2",
-    "karma": "^5.1.0",
+    "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.1.0",
     "karma-firefox-launcher": "^1.2.0",
     "karma-jasmine": "^3.3.1",
