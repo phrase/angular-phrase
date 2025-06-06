@@ -27,7 +27,7 @@
     "angular-translate": "^2.18.3",
     "eslint": "^7.5.0",
     "eslint-config-phrase": "git+https://github.com/phrase/eslint-config-phrase.git#v2",
-    "karma": "^5.1.0",
+    "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.1.0",
     "karma-firefox-launcher": "^1.2.0",
     "karma-jasmine": "^3.3.1",
