@@ -40,8 +40,8 @@ module.exports = function(config) {
         concurrency: Infinity,
     };
 
-    // Handle --configuration=ci parameter
-    if (process.argv.includes('--configuration=ci')) {
+    // Detect CI environment using process.env.CI
+    if (process.env.CI) {
         configuration.browsers = ['FirefoxHeadless'];
         configuration.singleRun = true;
     }
