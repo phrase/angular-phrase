@@ -15,5 +15,4 @@ jobs:
       run: npm run lint
     - name: Test
       run: |
-        export DISPLAY=:99.0
-        xvfb-run --auto-servernum npm test -- --configuration=ci
+        npm run test:ci

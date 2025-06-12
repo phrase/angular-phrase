@@ -17,7 +17,8 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules"
