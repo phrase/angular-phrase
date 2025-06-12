@@ -7,6 +7,8 @@ module.exports = (env, argv = {mode: 'development'}) => ({
             new TerserJSPlugin({})
         ]
     },
+    // Added for webpack 5 compatibility
+    target: ['web', 'es5'],
     output: {
         filename: argv.mode === 'production' ? "angular-phrase.min.js" : "angular-phrase.js",
         path: __dirname + "/dist"
